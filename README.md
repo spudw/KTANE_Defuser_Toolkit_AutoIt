@@ -8,3 +8,6 @@ One player is trapped in a virtual room with a ticking time bomb they must defus
 This Win32 application/tool automates and simplfies many of the aspects the experts need to perform to help aid with defusal instructions.  Since all of the answers are provided to the experts in the manual, this tool doesn't provide anything that an expert couldn't do with paper and pencil;  however, in many cases it significantly simplifies the process which may reduce the overall quality of the experience for the players.  
 
 I wrote this tool as a programming excercise; it is not recommended for players who want to enjoy the "full" experience. Use this tool at your discretion.  
+
+Latest Release　csn be found here:
+https://github.com/spudw/KTANE_Defuser_Toolkit_AutoIt/tree/RELEASES/v1.0
