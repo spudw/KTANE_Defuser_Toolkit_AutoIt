@@ -9,5 +9,5 @@ This Win32 application/tool automates and simplfies many of the aspects the expe
 
 I wrote this tool as a programming excercise; it is not recommended for players who want to enjoy the "full" experience. Use this tool at your discretion.  
 
-Latest Release　csn be found here:
+Latest Release can be found here:
 https://github.com/spudw/KTANE_Defuser_Toolkit_AutoIt/tree/RELEASES/v1.0
