@@ -1,5 +1,14 @@
 Version History
 
+Version 1.1.1 - 2017/12/02
+	Code Cleanup / Optimization
+	[*] Simon Says
+	    Fixed control "tab order"
+	    Code Cleanup / Optimization
+	[*] Who's On First
+	    Optimized / Reduced Key Word list	
+
+
 Version 1.1 - 2017/12/02
 	Bug Fixes, Code Cleanup & Added WM_COMMAND Handler
 	[+] Added WM_COMMAND Handler

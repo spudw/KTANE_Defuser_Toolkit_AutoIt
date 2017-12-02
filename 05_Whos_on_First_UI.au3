@@ -82,8 +82,12 @@ Func _WhosOnFirst_Set_Keyword()
 	Local $iWord = -1
 	For $iWords = 0 to 13
 		$iWord = $aWhosOnFirstWordListWords[$iIndex][$iWords]
-		$sWords &= $aWhosOnFirstWordList[$iWord]
-		If $iWords < 13 Then $sWords &= ", "
+		If $iWord <> Null Then
+			$sWords &= $aWhosOnFirstWordList[$iWord]
+			If $iWords < 13 Then
+				If $aWhosOnFirstWordListWords[$iIndex][$iWords+1] <> Null Then $sWords &= ", "
+			EndIf
+		EndIf
 	Next
 	GUICtrlSetData($aWhosOnFirstUI[$idLblWhosOnFirstWordList], $sWords)
 EndFunc
