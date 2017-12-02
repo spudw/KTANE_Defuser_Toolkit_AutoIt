@@ -9,7 +9,7 @@
 
 Global $aMemoryUI[1] = ["hwnd|id"]
 Global Enum $idBtnMemoryReset = 1, $idInputMemoryDisplayNumber, $idInputMemoryNumber1, $idInputMemoryNumber2, _
-	$idInputMemoryNumber3, $idInputMemoryNumber4, $idLblMemorySolution, $idBtnMemorySubmit, _
+	$idInputMemoryNumber3, $idInputMemoryNumber4, $idBtnMemorySubmit, $idLblMemorySolution, _
 	$idTabMemoryNextDummy, $idTabMemoryPrevDummy, $idMemoryLast
 ReDim $aMemoryUI[$idMemoryLast]
 
@@ -56,6 +56,7 @@ Func _Memory_UI_Reset()
 	If MsgBox($MB_YESNO + $MB_ICONERROR + $MB_DEFBUTTON2,"","Are you sure you want to start over?") = $IDNO Then Return 0
 	$iMemoryStageNumber = 1
 	_Memory_UI_ClearInputs()
+	_Memory_UI_EnableInputs()
 	GUICtrlSetData($aMemoryUI[$idLblMemorySolution], "Stage 1")
 	ControlFocus("","",$aMemoryUI[$idInputMemoryDisplayNumber])
 EndFunc
@@ -82,7 +83,8 @@ Func _Memory_EventHandler()
 				$iMemoryStageNumber += 1
 				_Memory_UI_ClearInputs()
 				ControlFocus("","",$aMemoryUI[$idInputMemoryDisplayNumber])
-			ElseIf $iMemoryStageNumber = 6 Then
+				If $iMemoryStageNumber >= 6 Then _Memory_UI_EnableInputs(0)
+			ElseIf $iMemoryStageNumber >= 6 Then
 				GUICtrlSetData($aMemoryUI[$idLblMemorySolution], "Module shoule be complete. Click Reset")
 			Else
 				GUICtrlSetData($aMemoryUI[$idLblMemorySolution], "Stage " & $iMemoryStageNumber & ": Whoops - Looks like bad numbers were input")
@@ -96,6 +98,13 @@ EndFunc
 
 Func _Memory_Tab_Move($iMove)
 	Execute("_Tab_Move(" & $iMove & ")")
+EndFunc
+
+Func _Memory_UI_EnableInputs($iState = $GUI_ENABLE)
+	If $iState <> $GUI_ENABLE THen $iState = $GUI_DISABLE
+	For $idControl = $aMemoryUI[$idInputMemoryDisplayNumber] To $aMemoryUI[$idInputMemoryNumber4]
+		GUICtrlSetState($idControl, $iState)
+	Next
 EndFunc
 
 Func _Memory_UI_ClearInputs()

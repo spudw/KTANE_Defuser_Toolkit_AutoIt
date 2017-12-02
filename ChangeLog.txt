@@ -1,5 +1,17 @@
 Version History
 
+Version 1.1 - 2017/12/02
+	Bug Fixes, Code Cleanup & Added WM_COMMAND Handler
+	[+] Added WM_COMMAND Handler
+	    Set focus to next control upon input control update notification ($EN_UPDATE)
+	[*] Memory UI
+	    Update for WM_COMMAND Handler 	
+	        Changed control ID order to plce Submit button directly after last input control is updated
+	    Disable controls when stage 5 is reached
+	[*] Wires
+	    Fixed control "tab order"
+
+
 Version 1.0.1 - 2017/11/26
 	Bug Fixes & Code Cleanup / Optimization
 	[*] Wires
@@ -12,7 +24,6 @@ Version 1.0.1 - 2017/11/26
 	    Code Cleanup / Optimization
 	[*] Complicated Wires
 	    Red, LED & Star - Evaluation Fixed
-	    
 
 
 Version 1.0 - 2017/11/20

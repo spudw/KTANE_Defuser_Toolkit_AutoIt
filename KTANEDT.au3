@@ -74,6 +74,7 @@ Func _CreateGUI()
 	GUICtrlCreateTabItem("")
 	GUISetOnEvent($GUI_EVENT_CLOSE, "_GUI_EventHandler")
 	GUISetState(@SW_SHOW)
+	GUIRegisterMsg($WM_COMMAND, "_WM_COMMAND")
 EndFunc
 
 Func _GUI_EventHandler()
@@ -103,5 +104,21 @@ Func _Tab_Move($iMove)
 
 	;EndSwitch
 	_GUICtrlTab_SetCurFocus($aGUI[$idTabCtrl],$iMove)
+EndFunc
+
+Func _WM_COMMAND($hWnd, $iMsg, $wParam, $lParam)
+	Local $idFrom = BitAND($wParam, 0xFFFF)
+	Local $iCode = BitShift($wParam, 16)
+	If _WinAPI_GetClassName($lParam) = "Edit" Then
+		If $iCode = $EN_UPDATE Then
+			Switch $idFrom
+				Case $aMemoryUI[$idInputMemoryDisplayNumber] To $aMemoryUI[$idInputMemoryNumber4]
+					Return GUICtrlSetState($idFrom + 1, $GUI_FOCUS)
+				Case $aPasswordsUI[$idInputPasswords00] To $aPasswordsUI[$idInputPasswords45]
+					Return GUICtrlSetState($idFrom + 1, $GUI_FOCUS)
+			EndSwitch
+		EndIf
+	EndIf
+	Return $GUI_RUNDEFMSG
 EndFunc
 #EndRegion
