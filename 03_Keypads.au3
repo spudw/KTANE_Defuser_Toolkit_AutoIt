@@ -18,21 +18,6 @@ Global $sKeypadsPossibleSets = ""
 #EndRegion - Constants and Variables
 
 
-#Region - Test Routine
-;$aTest = $aKeypadsSets
-;_ArrayShuffle($aTest)
-;$iRandSet = Random(0,5,1)
-;$aKeypadsInputs[0] = $aTest[$iRandSet][Random(0,1,1)]
-;$aKeypadsInputs[1] = $aTest[$iRandSet][Random(2,3,1)]
-;$aKeypadsInputs[2] = $aTest[$iRandSet][Random(4,5,1)]
-;$aKeypadsInputs[3] = $aTest[$iRandSet][6]
-;_ArrayDisplay($aKeypadsInputs)
-;Local $iSet = _Keypads_FindSet()
-;_Keypads_GetSequence($iSet)
-;_ArrayDisplay($aKeypadsAnswers,$iSet)
-#EndRegion - Test Routine
-
-
 #Region - Module Functions
 Func _Keypads_InputSymbol($iSymbolValue)
 	If $iKeypadsInputCount >= 4 Then Return 0

@@ -12,14 +12,6 @@ Global $aPasswordsPossibleAnswers = 0
 #EndRegion
 
 
-#Region - Test Data
-;["b","t","h","f","y","s"]
-;["t","h","a","v","q","w"]
-;["n","i","x","m","v","z"]
-;["l","y","o","x","g","w"]
-;["y","n","v","a","l","m"]
-#EndRegion
-
 #Region - Module Functions
 Func _Passwords_LetterInput($sLetter,$iColumn,$iIndex)
 	$aPasswordsInputs[$iColumn][$iIndex] = $sLetter

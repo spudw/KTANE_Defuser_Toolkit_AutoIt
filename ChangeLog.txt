@@ -1,5 +1,24 @@
 Version History
 
+Version 1.1.2 - 2017/12/03
+	Bug Fixes & Code Cleanup / Optimization
+	[*] Wires
+	    Three Wires
+	        Removed evaluation with same as default solution
+	    Four Wires
+	        Removed bad logic with serial check eval 
+	    Five Wires
+	        Removed bad logic with serial check eval
+	        Removed evaluation with same as default solution
+	    Six Wires
+	        Removed bad logic with serial check eval
+	        Removed evaluation with same as default solution
+	    Keypads
+	        Removed old test code
+	    Passwords
+	        Removed old test code
+
+
 Version 1.1.1 - 2017/12/02
 	Code Cleanup / Optimization
 	[*] Simon Says
