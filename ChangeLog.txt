@@ -1,5 +1,14 @@
 Version History
 
+Version 1.1.3 - 
+	Code Updates
+	[*] Main
+	    GUI Resize
+	        Main Tab Control Resize and Re-centering of Module Controls
+	[*] The Button
+		Logic Issue Corrected for Condition #Line 15
+
+
 Version 1.1.2 - 2017/12/03
 	Bug Fixes & Code Cleanup / Optimization
 	[*] Wires

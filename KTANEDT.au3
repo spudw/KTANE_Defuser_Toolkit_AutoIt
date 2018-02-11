@@ -45,7 +45,7 @@
 Global $aGUI["hwnd|id"]
 Global Enum $idTabCtrl = 1, $idGUILast
 ReDim $aGUI[$idGUILast]
-Global $aTabs[] = ["Wires","TheButton","Keypads","SimonSays","Memory","WhosOnFirst","MorseCode","ComplicatedWires","WireSequences","Mazes","Passwords"]
+Global $aTabs[] = ["Wires","TheButton","Keypads","SimonSays","WhosOnFirst","Memory","MorseCode","ComplicatedWires","WireSequences","Mazes","Passwords"]
 ;_ArraySort($aTabs)
 #EndRegion
 
@@ -65,8 +65,8 @@ Global $aTabs[] = ["Wires","TheButton","Keypads","SimonSays","Memory","WhosOnFir
 
 #Region - Functions
 Func _CreateGUI()
-	GUICreate("KTANE_Defuser_Toolkit", 615, 437)
-	$aGUI[$idTabCtrl] = GUICtrlCreateTab(24, 16, 561, 401)
+	GUICreate("KTANE_Defuser_Toolkit", 815, 437)
+	$aGUI[$idTabCtrl] = GUICtrlCreateTab(24, 16, 761, 401)
 	GUICtrlSetOnEvent(-1, "_GUI_EventHandler")
 	For $iTab = 0 to UBound($aTabs) -1
 		Execute("_" & $aTabs[$iTab] & "_UI_Create()")
